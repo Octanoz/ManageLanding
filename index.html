@@ -9,27 +9,35 @@
     <meta name="keywords"
         content="software development, team planning, project management, agile methodology, scrum, kanban">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:400..700">
+    <link rel="stylesheet" type="text/html" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:400..700">
     <link rel="stylesheet" href="style.css">
 
-    <title>Frontend Mentor | Manage landing page</title>
+    <title>Manage landing page</title>
 </head>
 
 <body>
     <header>
         <!-- navbar -->
-        <nav class="nav-menu container-70">
-            <a class="logo" href="#"><img src="images/logo.svg" alt="company logo"></a>
-            <ul role="list" class="nav-pages text-weight-700" aria-label="Primary">
-                <li>Pricing</li>
-                <li>Product</li>
-                <li>About Us</li>
-                <li>Careers</li>
-                <li>Community</li>
-            </ul>
-            <button class="btn btn-shadow" type="button">Get Started</button>
-        </nav>
-        <!-- hamburger menu & mobile menu -->
+        <div class="container-70">
+            <div class="nav-wrapper">
+                <a class="logo" href="#"><img src="images/logo.svg" alt="company logo"></a>
+                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    <img class="icon-hamburger" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
+                    <img class="icon-close || hide" src="images/icon-close.svg" alt="" aria-hidden="true">
+                    <span class="visually-hidden">Menu</span>
+                </button>
+                <nav class="primary-navigation" id="primary-navigation">
+                    <ul role="list" class="nav-pages | display-md-inline-flex text-weight-700" aria-label="Primary">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </nav>
+                <button class="nav-get-started | btn btn-shadow" type="button">Get Started</button>
+            </div>
+        </div>
     </header>
     <main>
         <!-- Hero -->
@@ -46,7 +54,7 @@
         </section>
         <!-- Features -->
         <section class="features">
-            <div class="features-container container-70 even-columns">
+            <div class="features-container | container-70 even-columns">
                 <div class="introduction">
                     <h2 class="heading-2">What’s different about Manage?</h2>
                     <p class="introduction-text">Manage provides all the functionality your team needs, without
@@ -55,22 +63,22 @@
                 </div>
                 <div class="features-list">
                     <div class="grid-feature">
-                        <div class="list-chip button-style text-weight-500">01</div>
-                        <h3 class="list-item-heading text-weight-700">Track company-wide progress</h3>
+                        <div class="list-chip | button-style text-weight-500">01</div>
+                        <h3 class="list-item-heading | text-weight-700">Track company-wide progress</h3>
                         <p class="list-item-text">See how your day-to-day tasks fit into the wider vision. Go from
                             tracking progress at the milestone level all the way done to the
                             smallest of details. Never lose sight of the bigger picture again.</p>
                     </div>
                     <div class="grid-feature">
-                        <div class="list-chip button-style text-weight-500">02</div>
-                        <h3 class="list-item-heading text-weight-700">Advanced built-in reports</h3>
+                        <div class="list-chip | button-style text-weight-500">02</div>
+                        <h3 class="list-item-heading | text-weight-700">Advanced built-in reports</h3>
                         <p class="list-item-text">Set internal delivery estimates and track progress toward company
                             goals. Our customisable dashboard helps you build out the reports
                             you need to keep key stakeholders informed.</p>
                     </div>
                     <div class="grid-feature">
-                        <div class="list-chip button-style text-weight-500">03</div>
-                        <h3 class="list-item-heading text-weight-700">Everything you need in one place</h3>
+                        <div class="list-chip button-style | text-weight-500">03</div>
+                        <h3 class="list-item-heading | text-weight-700">Everything you need in one place</h3>
                         <p class="list-item-text">Stop jumping from one service to another to communicate, store files,
                             track tasks and share documents. Manage offers an all-in-one team
                             productivity solution.</p>
@@ -81,7 +89,7 @@
         <!-- testimonials -->
         <section class="testimonials">
             <div class="container">
-                <h2 class="heading-2 text-center">What they’ve said</h2>
+                <h2 class="heading-2 | text-center">What they’ve said</h2>
                 <div class="carousel">
                     <div class="card">
                         <h4 class="card-heading">Anisha Li</h4>
@@ -106,30 +114,53 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-shadow">Get Started</button>
-        </section>
-        <section class="call-to-action accent-bg">
-            <div class="container-70">
-                <h2 class="text-white">Simplify how your team works today.</h2>
-                <button type="button" class="btn btn-reversed">Get Started</button>
             </div>
         </section>
-
+        <!-- call-to-action -->
+        <section class="call-to-action | accent-bg">
+            <div class="container-70">
+                <div class="even-columns vertical-align-center">
+                    <h2 class="text-white heading">Simplify how your team works today.</h2>
+                    <button type="button" class="btn btn-reversed btn-shadow push-right">Get Started</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer-bg">
-        <div class="container-70 text-white">
-            <div class="even-colums">
-                <div>
+        <div class="container-70">
+            <div class="even-columns">
+                <div class="logo-socials">
                     <a href="#"><img src="images/logo.svg" alt="logo"></a>
-                    <ul role="list" aria-label="Social links">
-                        <li><a aria-label="facebook" href="#"></a></li>
-                        <li><a aria-label="youtube" href="#"></a></li>
-                        <li><a aria-label="twitter" href="#"></a></li>
-                        <li><a aria-label="pinterest" href="#"></a></li>
-                        <li><a aria-label="instragram" href="#"></a></li>
+                    <ul class="social-list" role="list" aria-label="Social links">
+                        <li><a aria-label="facebook" href="#">
+                                <svg class="social-icon">
+                                    <use xlink:href="images/social-icons.svg#icon-facebook"></use>
+                                </svg></a>
+                        </li>
+                        <li><a aria-label="youtube" href="#">
+                                <svg class="social-icon">
+                                    <use xlink:href="images/social-icons.svg#icon-youtube"></use>
+                                </svg></a>
+                        </li>
+                        <li><a aria-label="twitter" href="#">
+                                <svg class="social-icon">
+                                    <use xlink:href="images/social-icons.svg#icon-twitter"></use>
+                                </svg></a>
+                        </li>
+                        <li><a aria-label="pinterest" href="#">
+                                <svg class="social-icon">
+                                    <use xlink:href="images/social-icons.svg#icon-pinterest"></use>
+                                </svg></a>
+                        </li>
+                        <li><a aria-label="instragram" href="#">
+                                <svg class="social-icon">
+                                    <use xlink:href="images/social-icons.svg#icon-instagram"></use>
+                                </svg></a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <nav>
+                    <nav class="footer-nav">
                         <ul role="list" aria-label="Footer">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Pricing</a></li>
@@ -141,22 +172,25 @@
                         </ul>
                     </nav>
                 </div>
-                <div>
+                <div class="subscription">
                     <form action="">
                         <input type="email" placeholder="Updates in your inbox…">
                         <button class="btn" type="button">Go</button>
                     </form>
                     <p>Copyright 2020. All Rights Reserved</p>
                 </div>
-
-
-                <div class="attribution">
-                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
-                        Mentor</a>.
-                    Coded by <a href="#">Your Name Here</a>.
-                </div>
             </div>
+
+
+            <section class="attribution text-center">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+                    rel="noopener">Frontend
+                    Mentor</a>.
+                Coded by <a href="https://github.com/Octanoz/ManageLanding" target="_blank" rel="noopener">Robin</a>.
+            </section>
+        </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 
 </html>
