@@ -39,6 +39,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     scrollbar-color: var(--color-accent), var(--color-primary);
+    scrollbar-gutter: auto;
+    overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -85,6 +87,11 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: var(--spacer-default);
+}
+
+.nav-wrapper .logo {
+    fill: var(--color-primary);
+    /* --logo-color: var(--color-primary); */
 }
 
 .nav-wrapper .mobile-nav-toggle {
@@ -147,13 +154,34 @@ button {
 /* call-to-action z */
 /* footer a */
 
+footer .even-columns {
+    justify-items: center;
+    outline: 3px solid limegreen;
+    grid-template-areas:
+        'subscription subscription'
+        'nav-1 nav-2'
+        'socials socials'
+        'logo logo'
+        'copyright copyright';
+}
+
+footer .footer-logo {
+    --logo-color: var(--very-light-grey);
+    grid-area: logo;
+}
+
+footer .social-links {
+    grid-area: socials;
+}
+
 footer .social-list {
     display: flex;
-    gap: var(--spacer-default);
+    gap: var(--spacer-bigger);
 }
 
 footer .social-icon {
-    max-inline-size: 1.25rem;
+    inline-size: 2rem;
+    aspect-ratio: 1;
     fill: var(--very-light-grey);
     transition: 200ms ease;
 }
@@ -162,19 +190,48 @@ footer .social-list a:is(:hover, :focus) .social-icon {
     fill: var(--color-accent);
 }
 
-footer .footer-nav {
-    columns: 2;
+footer .footer-nav-1 {
+    grid-area: nav-1;
 }
 
-footer .footer-nav a {
+footer .footer-nav-2 {
+    grid-area: nav-2
+}
+
+footer .footer-nav-list li,
+footer .footer-logo,
+footer .subscription {
+    margin-block: 0.5rem;
+}
+
+footer .footer-nav-list a {
     color: var(--very-light-grey);
     text-decoration: none;
     transition: 200ms ease;
 }
 
-footer .footer-nav a:hover,
-footer .footer-nav a:focus {
+footer .footer-nav-list a:hover,
+footer .footer-nav-list a:focus {
     color: var(--color-accent);
+}
+
+footer .subscription {
+    grid-area: subscription;
+}
+
+footer .copyright {
+    grid-area: copyright;
+}
+
+footer .subscription input[type=email] {
+    width: 70svw;
+    height: 2.5rem;
+    padding-inline: var(--spacer-lower);
+    border-radius: 100vw;
+}
+
+footer .email-field::placeholder {
+    margin-left: var(--spacer-bigger);
 }
 
 /* footer z */
@@ -195,7 +252,7 @@ footer .footer-nav a:focus {
     border: 0;
 }
 
-/* Editing Helper - using where to have the lowest specificity possible */
+/* Standard spacer - using where to have the lowest specificity possible */
 :where(.flow > :not(:first-child)) {
     margin-top: var(--flow-spacer, 3rem);
 }
@@ -241,7 +298,6 @@ footer .footer-nav a:focus {
 .btn {
     color: var(--very-light-grey);
     background-color: var(--color-accent);
-    height: min-content;
     width: max-content;
     padding: var(--spacer-lower) var(--spacer-medium);
     border-radius: 100vw;
@@ -426,6 +482,30 @@ p {
         grid-auto-columns: 1fr;
     }
 
+    footer .even-columns {
+        grid-template-rows: auto-fit minmax(200px, 1fr);
+        grid-template-areas:
+            'logo nav-1 nav-2 subscription'
+            '. nav-1 nav-2 .'
+            'socials nav-1 nav-2 copyright';
+    }
+
+    footer .subscription {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    footer .subscription input[type='email'] {
+        max-width: 170px;
+    }
+
+    footer .social-list {
+        gap: var(--spacer-default);
+    }
+
+    footer .social-icon {
+        width: 1.5rem;
+    }
 }
 
 /* Media Queries z */
