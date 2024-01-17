@@ -162,6 +162,7 @@ button {
 
 .testimonials .slider {
     display: flex;
+    overflow-x: hidden;
 }
 
 /* Slider Media Queries at the end of Media Queries block */
