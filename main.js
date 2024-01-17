@@ -2,6 +2,7 @@ const navToggle = document.querySelector(".mobile-nav-toggle");
 const hamburgerIcon = document.querySelector(".icon-hamburger");
 const crossIcon = document.querySelector(".icon-close");
 const primaryNav = document.querySelector(".primary-navigation");
+const slider = new A11YSlider(document.querySelector(".slider"));
 
 navToggle.addEventListener('click', () => {
     primaryNav.toggleAttribute('data-visible');

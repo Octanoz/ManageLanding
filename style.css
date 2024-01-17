@@ -160,8 +160,18 @@ button {
 /* features z */
 /* testimonials a */
 
-.testimonials .carousel {
+.testimonials .slider {
     display: flex;
+}
+
+/* Slider Media Queries at the end of Media Queries block */
+.slider>* {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.testimonials .btn {
+    margin-inline: auto;
 }
 
 /* testimonials z */
@@ -244,6 +254,7 @@ footer .subscription {
 
 footer .copyright {
     grid-area: copyright;
+    font-size: 0.9rem;
 }
 
 footer .subscription input[type=email] {
@@ -282,7 +293,8 @@ footer .email-field::placeholder {
 
 /* Containers */
 .container {
-    padding-block: var(--spacer-big);
+    display: grid;
+    padding: var(--spacer-big) var(--spacer-default);
 }
 
 .container-70 {
@@ -527,6 +539,7 @@ p {
 
     footer .btn {
         width: 70px;
+        height: 2.5rem;
     }
 }
 
@@ -550,6 +563,7 @@ p {
     footer .even-columns {
         grid-template-areas:
             'logo nav subscription'
+            '. nav .'
             'socials nav copyright';
         justify-items: start;
     }
@@ -568,13 +582,26 @@ p {
     }
 
     footer .subscription input[type='email'] {
-        width: clamp(170px, 10vw, 270px);
+        width: clamp(170px, 20vw, 270px);
     }
 
     footer .copyright {
         justify-self: last baseline;
     }
+}
 
+/* Slider */
+
+@media (width > 40rem) {
+    .slider>* {
+        width: 50%;
+    }
+}
+
+@media (width > 60rem) {
+    .slider>* {
+        width: 33.3333%;
+    }
 }
 
 /* Media Queries z */
