@@ -39,7 +39,6 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     scrollbar-color: var(--color-accent), var(--color-primary);
-    scrollbar-gutter: auto;
     overflow-x: hidden;
 }
 
@@ -118,17 +117,44 @@ button {
 /* nav-bar z */
 /* hero a */
 
-.hero .hero-container {
-    display: grid;
-    align-items: start;
+.hero .even-columns {
+    align-items: center;
 }
 
 /* hero z */
 /* features a */
 
+.features .introduction {
+    max-width: 500px;
+}
+
+.features .grid-feature {
+    display: grid;
+    position: relative;
+    grid-auto-columns: 50px 1fr;
+    gap: 1rem;
+    grid-template-areas:
+        'chip heading'
+        'text text';
+    align-items: center;
+    text-align: left;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+
 .features .list-chip {
+    grid-area: chip;
     max-inline-size: 50px;
     padding: 0.25rem var(--spacer-default);
+}
+
+.features .list-item-heading {
+    grid-area: heading;
+}
+
+.features p {
+    grid-area: text;
+    max-inline-size: 50ch;
 }
 
 /* features z */
@@ -156,13 +182,13 @@ button {
 
 footer .even-columns {
     justify-items: center;
-    outline: 3px solid limegreen;
     grid-template-areas:
         'subscription subscription'
-        'nav-1 nav-2'
+        'nav nav'
         'socials socials'
         'logo logo'
         'copyright copyright';
+    line-height: 1;
 }
 
 footer .footer-logo {
@@ -175,6 +201,7 @@ footer .social-links {
 }
 
 footer .social-list {
+    align-self: self-end;
     display: flex;
     gap: var(--spacer-bigger);
 }
@@ -190,18 +217,14 @@ footer .social-list a:is(:hover, :focus) .social-icon {
     fill: var(--color-accent);
 }
 
-footer .footer-nav-1 {
-    grid-area: nav-1;
+footer .footer-nav {
+    grid-area: nav;
+    columns: 2;
+    gap: max(4rem, 8vw);
 }
 
-footer .footer-nav-2 {
-    grid-area: nav-2
-}
-
-footer .footer-nav-list li,
-footer .footer-logo,
-footer .subscription {
-    margin-block: 0.5rem;
+footer .footer-nav-list li {
+    margin-bottom: 1.5rem;
 }
 
 footer .footer-nav-list a {
@@ -407,7 +430,21 @@ p {
 /* Media Queries a */
 
 /* Mobile */
-@media (width <=43em) {
+@media (width <=45em) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .even-columns {
+        justify-content: center;
+        text-align: center;
+    }
+
     .primary-navigation {
         --nav-spacer: 5rem;
 
@@ -456,6 +493,24 @@ p {
         order: -1;
     }
 
+    .hero button {
+        margin-inline: auto;
+    }
+
+    .features .list-item-heading::before {
+        content: "";
+        width: min(500px, 100%);
+        position: absolute;
+        inset: 0;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+        z-index: -1;
+        border-radius: 100vw 0 0 100vw;
+        background-color: hsl(12, 88%, 96%);
+        /* background-color: rebeccapurple; */
+        box-shadow: 6em 0 0 hsl(12, 88%, 96%);
+    }
+
     .call-to-action {
         background-image: url(images/bg-simplify-section-mobile.svg);
         background-position: left;
@@ -469,10 +524,14 @@ p {
     .push-right {
         margin-inline: auto;
     }
+
+    footer .btn {
+        width: 70px;
+    }
 }
 
 /* Larger screens */
-@media (width > 43em) {
+@media (width > 45em) {
     .display-md-inline-flex {
         display: inline-flex;
     }
@@ -482,21 +541,17 @@ p {
         grid-auto-columns: 1fr;
     }
 
-    footer .even-columns {
-        grid-template-rows: auto-fit minmax(200px, 1fr);
+    .features .grid-feature {
         grid-template-areas:
-            'logo nav-1 nav-2 subscription'
-            '. nav-1 nav-2 .'
-            'socials nav-1 nav-2 copyright';
+            'chip heading'
+            '.... text';
     }
 
-    footer .subscription {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    footer .subscription input[type='email'] {
-        max-width: 170px;
+    footer .even-columns {
+        grid-template-areas:
+            'logo nav subscription'
+            'socials nav copyright';
+        justify-items: start;
     }
 
     footer .social-list {
@@ -506,6 +561,20 @@ p {
     footer .social-icon {
         width: 1.5rem;
     }
+
+    footer .subscription {
+        display: block;
+        justify-self: last baseline;
+    }
+
+    footer .subscription input[type='email'] {
+        width: clamp(170px, 10vw, 270px);
+    }
+
+    footer .copyright {
+        justify-self: last baseline;
+    }
+
 }
 
 /* Media Queries z */
