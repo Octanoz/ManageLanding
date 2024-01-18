@@ -309,6 +309,10 @@ button {
 /* call-to-action z */
 /* footer a */
 
+footer .container-70 {
+    padding-block: var(--spacer-biggest);
+}
+
 footer .even-columns {
     justify-items: center;
     grid-template-areas:
@@ -527,7 +531,7 @@ p {
 }
 
 .text-weight-400 {
-    font-weight: 4300;
+    font-weight: 400;
 }
 
 .text-weight-500 {
@@ -536,6 +540,10 @@ p {
 
 .text-weight-700 {
     font-weight: 700;
+}
+
+.text-weight-900 {
+    font-weight: 900;
 }
 
 .text-white {
