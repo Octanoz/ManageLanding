@@ -159,6 +159,38 @@ button {
 
 /* features z */
 /* testimonials a */
+.testimonials {
+    position: relative;
+}
+
+.testimonials .container {
+    padding-bottom: 4.5rem;
+}
+
+.testimonials .card {
+    background-color: var(--very-light-grey);
+    position: relative;
+    padding: var(--spacer-biggest) var(--spacer-default) var(--spacer-bigger);
+}
+
+.slider .fake-background {
+    background-color: white;
+    height: 3rem;
+    position: absolute;
+    inset: 0;
+}
+
+.slider img {
+    margin-inline: auto;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    background-color: white;
+}
+
+.testimonials .heading-2 {
+    margin-bottom: calc(var(--spacer-biggest) * 2);
+}
 
 .testimonials .slider {
     display: flex;
@@ -171,30 +203,93 @@ button {
     flex: 0 0 auto;
 }
 
-.slider .card {
-    background-color: var(--very-light-grey);
-    position: relative;
-    padding: var(--spacer-biggest) var(--spacer-default);
+.testimonials .a11y-slider-prev {
+    position: absolute;
+    inline-size: max(6rem, 10vw);
+    block-size: max(2rem, 1vw);
+    top: 19%;
+    z-index: 1;
+    text-indent: -9999px;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 100vw;
+    background-image: url(images/caret-left-solid.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
-.slider .fake-background {
-    background-color: white;
-    height: 3rem;
+.testimonials .a11y-slider-autoplay {
     position: absolute;
     inset: 0;
+    top: 19%;
+    margin-inline: auto;
+    text-indent: -9999px;
+    inline-size: 2rem;
+    block-size: 2rem;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 5px;
+    background-image: url(images/stop-solid.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
-.slider img {
-    /* position: absolute; */
-    /* top: -2rem; */
-    margin-inline: auto;
-    width: 4rem;
-    height: 4rem;
-    transform: translateY(-50%);
-    background-color: white;
+.testimonials .a11y-slider-next {
+    position: absolute;
+    inline-size: max(6rem, 10vw);
+    block-size: max(2rem, 2vw);
+    right: 2%;
+    top: 19%;
+    z-index: 1;
+    text-indent: -9999px;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: 100vw;
+    background-image: url(images/caret-right-solid.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.a11y-slider-dots {
+    display: flex;
+    margin: var(--spacer-default);
+    gap: var(--spacer-default);
+    justify-content: center;
+    align-items: center;
+}
+
+.a11y-slider-dots li {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--color-accent);
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.a11y-slider-dots li button {
+    display: block;
+    font-size: 0;
+    text-indent: -9999px;
+    background: transparent;
+    border: 1px solid white;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.a11y-slider-dots li button.active {
+    background: var(--color-accent);
 }
 
 .testimonials .btn {
+    margin-top: var(--spacer-bigger);
     margin-inline: auto;
 }
 
@@ -625,13 +720,13 @@ p {
 
 @media (width > 40rem) {
     .slider>* {
-        width: 50%;
+        width: 49%;
     }
 }
 
 @media (width > 60rem) {
     .slider>* {
-        width: 33.3333%;
+        width: calc(33.3333% - calc(2rem / 3));
     }
 }
 
@@ -643,6 +738,14 @@ p {
 
 .hide {
     display: none;
+}
+
+.stop {
+    background-image: url(images/stop-solid.svg);
+}
+
+.go {
+    background-image: url(images/caret-right-solid.svg);
 }
 
 /* Firefox only */

@@ -17,11 +17,25 @@ navToggle.addEventListener('click', () => {
         hamburgerIcon.classList.toggle("hide");
         crossIcon.classList.toggle("hide");
     }
-})
+});
 
 const slider = new A11YSlider(document.querySelector(".slider"), {
     container: false,
-    arrows: true,
-    dots: false,
+    arrows: false,
+    dots: true,
     autoplay: true,
+    responsive: {
+        640: {
+            arrows: true,
+            dots: false
+        }
+    }
+});
+
+const autoPlayToggle = document.querySelector(".a11y-slider-autoplay");
+
+autoPlayToggle.addEventListener('click', () => {
+    if (!autoPlayToggle.hasAttribute('data-autoplaying')) {
+        autoPlayToggle.classList.toggle("go");
+    }
 });
