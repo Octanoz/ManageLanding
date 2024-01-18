@@ -162,13 +162,36 @@ button {
 
 .testimonials .slider {
     display: flex;
-    overflow-x: hidden;
+    gap: var(--spacer-default);
 }
 
 /* Slider Media Queries at the end of Media Queries block */
 .slider>* {
-    width: 100%;
+    max-width: 100%;
     flex: 0 0 auto;
+}
+
+.slider .card {
+    background-color: var(--very-light-grey);
+    position: relative;
+    padding: var(--spacer-biggest) var(--spacer-default);
+}
+
+.slider .fake-background {
+    background-color: white;
+    height: 3rem;
+    position: absolute;
+    inset: 0;
+}
+
+.slider img {
+    /* position: absolute; */
+    /* top: -2rem; */
+    margin-inline: auto;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    background-color: white;
 }
 
 .testimonials .btn {
@@ -296,6 +319,7 @@ footer .email-field::placeholder {
 .container {
     display: grid;
     padding: var(--spacer-big) var(--spacer-default);
+    width: 100% - var(--spacer-bigger);
 }
 
 .container-70 {
@@ -592,6 +616,12 @@ p {
 }
 
 /* Slider */
+
+@media (width < 40rem) {
+    .slider>* {
+        width: 100%;
+    }
+}
 
 @media (width > 40rem) {
     .slider>* {

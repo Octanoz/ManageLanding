@@ -19,4 +19,9 @@ navToggle.addEventListener('click', () => {
     }
 })
 
-const slider = new A11YSlider(document.querySelector(".slider"));
+const slider = new A11YSlider(document.querySelector(".slider"), {
+    container: false,
+    arrows: true,
+    dots: false,
+    autoplay: true,
+});
