@@ -126,20 +126,21 @@ button {
 
 .features .introduction {
     max-width: 500px;
+    margin-bottom: var(--spacer-bigger);
 }
 
 .features .grid-feature {
     display: grid;
     position: relative;
     grid-auto-columns: 50px 1fr;
-    gap: 1rem;
+    gap: var(--spacer-default);
     grid-template-areas:
         'chip heading'
         'text text';
     align-items: center;
     text-align: left;
     margin-inline: auto;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacer-bigger);
 }
 
 .features .list-chip {
@@ -205,7 +206,7 @@ button {
 
 .testimonials .a11y-slider-prev {
     position: absolute;
-    inline-size: max(6rem, 10vw);
+    inline-size: max(4rem, 6vw);
     block-size: max(2rem, 1vw);
     top: 19%;
     z-index: 1;
@@ -231,7 +232,7 @@ button {
     background-color: var(--color-accent);
     border: none;
     border-radius: 5px;
-    background-image: url(images/stop-solid.svg);
+    /* background-image: url(images/stop-solid.svg); */
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -240,8 +241,8 @@ button {
 
 .testimonials .a11y-slider-next {
     position: absolute;
-    inline-size: max(6rem, 10vw);
-    block-size: max(2rem, 2vw);
+    inline-size: max(4rem, 6vw);
+    block-size: max(2rem, 1vw);
     right: 2%;
     top: 19%;
     z-index: 1;
@@ -375,13 +376,8 @@ footer .subscription {
     grid-area: subscription;
 }
 
-footer .copyright {
-    grid-area: copyright;
-    font-size: 0.9rem;
-}
-
 footer .subscription input[type=email] {
-    width: 70svw;
+    width: 60svw;
     height: 2.5rem;
     padding-inline: var(--spacer-lower);
     border-radius: 100vw;
@@ -389,6 +385,25 @@ footer .subscription input[type=email] {
 
 footer .email-field::placeholder {
     margin-left: var(--spacer-bigger);
+}
+
+footer .copyright {
+    grid-area: copyright;
+    font-size: 0.9rem;
+}
+
+
+footer .attribution {
+    margin-top: var(--spacer-bigger);
+    color: white;
+}
+
+footer .attribution a {
+    color: var(--color-accent);
+}
+
+footer .attribution a:is(:hover, :focus) {
+    color: white;
 }
 
 /* footer z */
@@ -637,6 +652,10 @@ p {
         margin-inline: auto;
     }
 
+    .features .grid-feature {
+        gap: var(--spacer-default) 0.25rem;
+    }
+
     .features .list-item-heading::before {
         content: "";
         width: min(500px, 100%);
@@ -748,8 +767,8 @@ p {
     display: none;
 }
 
-.stop {
-    background-image: url(images/stop-solid.svg);
+.pause {
+    background-image: url(images/pause-solid.svg);
 }
 
 .go {

@@ -33,9 +33,15 @@ const slider = new A11YSlider(document.querySelector(".slider"), {
 });
 
 const autoPlayToggle = document.querySelector(".a11y-slider-autoplay");
+autoPlayToggle.classList.add("pause");
 
 autoPlayToggle.addEventListener('click', () => {
-    if (!autoPlayToggle.hasAttribute('data-autoplaying')) {
+    const playSetting = autoPlayToggle.getAttribute('data-autoplaying');
+
+    if (playSetting === "false") {
+        autoPlayToggle.classList.toggle("go");
+    }
+    else {
         autoPlayToggle.classList.toggle("go");
     }
 });
