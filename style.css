@@ -121,6 +121,10 @@ button {
     align-items: center;
 }
 
+.hero .heading {
+    margin-bottom: var(--spacer-default);
+}
+
 /* hero z */
 /* features a */
 
@@ -377,7 +381,7 @@ footer .subscription {
 }
 
 footer .subscription input[type=email] {
-    width: 60svw;
+    width: min(300px, 70svw);
     height: 2.5rem;
     padding-inline: var(--spacer-lower);
     border-radius: 100vw;
@@ -565,6 +569,10 @@ p {
     color: white;
 }
 
+.nowrap-sentence {
+    white-space: nowrap;
+}
+
 /* Headings */
 .heading {
     display: grid;
@@ -684,9 +692,17 @@ p {
         margin-inline: auto;
     }
 
+    footer .even-columns {
+        gap: var(--spacer-bigger);
+    }
+
     footer .btn {
         width: 70px;
         height: 2.5rem;
+    }
+
+    footer .footer-nav-list {
+        text-align: left;
     }
 }
 
@@ -729,7 +745,7 @@ p {
     }
 
     footer .subscription input[type='email'] {
-        width: clamp(170px, 20vw, 270px);
+        width: clamp(155px, 20vw, 270px);
     }
 
     footer .copyright {
